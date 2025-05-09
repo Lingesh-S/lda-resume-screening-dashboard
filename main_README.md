@@ -1,24 +1,57 @@
-# 🧠 LDA-Powered Resume Screening Dashboard
+# 📄 LDA-Powered Resume Screening Dashboard
 
-A smart and efficient resume filtering system using **Latent Dirichlet Allocation (LDA)** and **token indexing**, built with **Python, NLP**, and **Streamlit**.
-
-📍 _Presented at the International Conference on Cognitive Computing and Artificial Intelligence (ICCCAI-2024) in collaboration with Taylor’s University, Malaysia._
-
----
-
-## 📌 Project Summary
-
-This AI-powered dashboard enables HR professionals and recruiters to upload resumes and job descriptions, analyze keyword matches using LDA topic modeling, and visually screen candidates in real-time through an interactive dashboard.
-
-It enhances traditional resume screening with **token-based topic analysis**, offering faster, more accurate shortlisting.
+A dual-phase intelligent resume screening system combining NLP, topic modeling, and interactive UI for recruiters.  
+🚀 Extended in Phase 2 with OpenAI-powered interview question generation!
 
 ---
 
-## 📂 Repository Structure
+## ⚙ Technologies Used
 
-```bash
-📁 LDA-Resume-Screener/
-├── 📁 phase-1-conference-version/      # Version presented at ICCCAI-2024
-├── 📁 phase-2-extended-ai-version/     # Upcoming AI-enhanced version with OpenAI integration
-├── README.md                           # Main project overview
-└── requirements.txt                    # Python dependencies
+- Python 🐍  
+- NLP with SpaCy & Gensim  
+- LDA Topic Modeling  
+- Streamlit for Dashboard UI  
+- Pandas & NumPy for data processing  
+- Matplotlib & pyLDAvis for visualization  
+- OpenAI API (Phase 2)
+
+---
+
+## 🚀 Key Features
+
+### 🧪 Phase 1: Conference Version
+- 📄 Upload and parse resumes (PDF)
+- 🧠 Extract dominant topics using LDA
+- 🧩 Match resume topics with job descriptions
+- 📊 Interactive visualization of token weights and match scores
+- 📂 Paper-focused, academic-grade prototype
+
+### 🤖 Phase 2: Extended AI Version
+- 🔍 AI-based screening & candidate ranking
+- 🗣️ Auto-generated interview questions based on job role + resume
+- 🔌 OpenAI GPT-3.5 integration
+- ⚠️ Includes a working version and a "buggy" prototype folder
+
+---
+
+## 📘 Conference Info
+
+- 📍 **ICCCAI 2024** – International Conference on Cognitive Computing and Artificial Intelligence  
+- 🏛 In association with **Taylor’s University, Malaysia**
+- 📅 Held on **March 7–8, 2024**
+- 📄 **Paper published** in internal proceedings
+- 👨‍🎓 Represented by: **Lingesh S (Author)**
+
+---
+
+## 📈 Future Work
+
+- 🔌 Integration with OpenAI embeddings for smarter screening
+- 🧠 RAG-based document understanding (Retrieval Augmented Generation)
+- 💡 Resume-score-based recommendation engine
+- 🌐 Web deployment with modern AI microservices
+
+---
+
+## 🗂 Repository Structur
+
