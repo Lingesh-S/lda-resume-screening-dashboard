@@ -53,5 +53,30 @@ A dual-phase intelligent resume screening system combining NLP, topic modeling, 
 
 ---
 
-## 🗂 Repository Structur
+## 🗂 Repository Structure
 
+lda-resume-screening-dashboard/
+│
+├── 📁 phase-1-conference-version/ ← Clean academic version
+│ └── (LDA, resume parsing, visualizations)
+│
+├── 📁 phase-2-extended-ai-version/ ← With OpenAI integration
+│ ├── working/ ← Fully working version
+│ └── buggy/ ← Prototype with issues
+│
+├── main_README.md
+├── requirements.txt
+└── github-default-readme.md
+
+
+---
+
+## 👨‍💻 Author
+
+**Lingesh S**  
+📍 Budding AI Engineer passionate about smart solutions and real-world applications.  
+🌐 [GitHub](https://github.com/Lingesh-S) • [LinkedIn](https://linkedin.com/in/lingesh-s29)
+
+---
+
+> 💡 *For any questions or collaboration ideas, feel free to connect on LinkedIn!*
