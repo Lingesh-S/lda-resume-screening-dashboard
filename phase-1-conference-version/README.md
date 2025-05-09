@@ -25,8 +25,8 @@ This Streamlit application performs automatic resume screening using TF-IDF and 
 ```bash
 pip install -r requirements.txt
 streamlit run streamlit_app.py
-
-Files
+```
+##Files
 streamlit_app.py: Main Streamlit app.
 
 Resume_Data.csv: Preprocessed resumes.
@@ -37,7 +37,8 @@ Similar.py: Custom similarity scoring module.
 
 Images/logo.png: Logo displayed in the app.
 
-Dependencies
+##Dependencies
+
 Streamlit
 
 Gensim
