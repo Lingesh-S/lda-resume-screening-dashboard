@@ -56,3 +56,9 @@ streamlit run streamlit_app.py
 - WordCloud
 - nltk
 - PIL
+
+## If running for the first time, make sure to download NLTK packages:
+
+```python
+nltk.download('punkt')
+nltk.download('stopwords')
