@@ -23,6 +23,7 @@ This version is an **extended upgrade** of the LDA-powered resume screener, usin
 ```bash
 pip install -r requirements.txt
 streamlit run app/app.py
+```
 
 📌 Set up your .env file like this:
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxx
