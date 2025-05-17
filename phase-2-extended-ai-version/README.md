@@ -25,10 +25,10 @@ pip install -r requirements.txt
 streamlit run app/app.py
 ```
 
-📌 Set up your .env file like this:
+## 📌 Set up your .env file like this:
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxx
 
-📦 Technologies Used
+# 📦 Technologies Used
 Python, Streamlit
 
 OpenAI GPT API
@@ -37,7 +37,7 @@ Pandas, JSON
 
 python-dotenv (for loading API key securely)
 
-🧠 Future Upgrades
+# 🧠 Future Upgrades
 Resume scoring and ranking using embeddings
 
 RAG-based document understanding
@@ -46,7 +46,7 @@ Recruiter chat assistant
 
 Real-time feedback on resumes
 
-👨‍💻 Author: Lingesh S
+# 👨‍💻 Author: Lingesh S
 
 📍 Budding AI Engineer passionate about smart solutions and real-world applications
 
