@@ -47,5 +47,7 @@ Recruiter chat assistant
 Real-time feedback on resumes
 
 👨‍💻 Author: Lingesh S
-📍 Budding AI Engineer
-🌐 GitHub • LinkedIn
+
+📍 Budding AI Engineer passionate about smart solutions and real-world applications
+
+🌐 [GitHub](https://github.com/Lingesh-S) • [LinkedIn](https://linkedin.com/in/lingesh-s29) • [X](https://x.com/LINGESH_S29)
