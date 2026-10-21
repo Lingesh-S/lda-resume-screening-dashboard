@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Personal data: resumes and user accounts never go in git
+**/data/Resumes/
+**/data/put resume/
+**/ai_components/users.json
+**/ai_components/data.json
+.env

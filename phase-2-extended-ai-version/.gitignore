@@ -1,3 +1,8 @@
 .env
 __pycache__/
 *.pyc
+# Local user accounts and uploads: personal data, never commit
+ai_components/users.json
+ai_components/*.tmp
+ai_components/data.json
+data/Resumes/
