@@ -35,33 +35,28 @@ A Streamlit-based application that performs resume screening using LDA topic mod
 - Visualize LDA topics using word clouds and bar charts.
 
 ## How to Run
+
 ```bash
 pip install -r requirements.txt
-streamlit run streamlit_app.py
+python -m spacy download en_core_web_sm
+python -m nltk.downloader punkt punkt_tab stopwords wordnet
+streamlit run app/app.py
 ```
 
-## If running for the first time, make sure to download NLTK packages:
-
-```python
-nltk.download('punkt')
-nltk.download('stopwords')
-```
+The app finds its data and logo relative to its own file, so it can be started from any folder.
 
 ## Files
 
-- streamlit_app.py: Main Streamlit app.
-- Resume_Data.csv: Preprocessed resumes.
-- Job_Data.csv: Job descriptions.
-- Similar.py: Custom similarity scoring module.
-- Images/logo.png: Logo displayed in the app.
+- `app/app.py`: Streamlit dashboard. Scores are cached per job description and the LDA model is trained once per dataset.
+- `core/fileReader.py`: builds `data/Resume_Data.csv` / `data/Job_Data.csv` from a folder of .pdf/.docx/.txt files or from the Kaggle CSV.
+- `core/Cleaner.py`, `core/Distill.py`: tokenising, stopword removal, lemmatisation (spaCy + NLTK).
+- `core/tf_idf.py`: selects distinctive words for matching.
+- `core/Similar.py`: word-level Jaccard, Sørensen–Dice, cosine and overlap similarity, averaged to a 0–100 score.
+- `data/Resume_Data.csv`: anonymised sample of the public Kaggle resume dataset (`data/resume_dataset.csv`).
+- `data/Job_Data.csv`: processed job descriptions.
 
-## Dependencies
-- Streamlit
-- Gensim
-- pandas
-- plotly
-- matplotlib
-- WordCloud
-- nltk
-- PIL
+## Note on scores
 
+Earlier versions compared resumes and job descriptions character by character (textdistance's default
+on plain strings), which made almost every pair look similar. Scores now compare words, so they spread
+out more and rankings are more meaningful.

@@ -1,4 +1,5 @@
 import spacy
+
 import Distill
 
 try:
@@ -29,7 +30,7 @@ def _reduce_redundancy(text):
 
 def _get_target_words(text):
     """
-    Takes in text and uses Spacy Tags on it, to extract the relevant Noun, Proper Noun words that contain words related to tech and JD. 
+    Takes in text and uses Spacy Tags on it, to extract the relevant Noun, Proper Noun words that contain words related to tech and JD.
 
     """
     target = []

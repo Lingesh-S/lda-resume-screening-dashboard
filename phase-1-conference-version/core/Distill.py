@@ -1,9 +1,8 @@
-import nltk
-import spacy
 import re
 
-from nltk.tokenize import word_tokenize, sent_tokenize
+import spacy
 from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 
 # Define english stopwords
 stop_words = stopwords.words('english')
@@ -15,10 +14,12 @@ nlp = spacy.load('en_core_web_sm')
 # for the words that are not present in the stop words but the user wants them deleted.
 
 
-def remove_stopwords(text, stopwords=stop_words, optional_params=False, optional_words=[]):
-    if optional_params:
-        stopwords.append([a for a in optional_words])
-    return [word for word in text if word not in stopwords]
+def remove_stopwords(text, stopwords=None, optional_params=False, optional_words=None):
+    """Drop stopwords (plus any `optional_words`) without mutating the shared list."""
+    stop = set(stop_words if stopwords is None else stopwords)
+    if optional_params and optional_words:
+        stop.update(optional_words)
+    return [word for word in text if word not in stop]
 
 
 def tokenize(text):
@@ -44,7 +45,7 @@ def _to_string(List):
     return string.join(List)
 
 
-def remove_tags(text, postags=['PROPN', 'NOUN', 'ADJ', 'VERB', 'ADV']):
+def remove_tags(text, postags=('PROPN', 'NOUN', 'ADJ', 'VERB', 'ADV')):
     """
     Takes in Tags which are allowed by the user and then elimnates the rest of the words
     based on their Part of Speech (POS) Tags.

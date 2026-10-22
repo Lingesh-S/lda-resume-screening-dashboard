@@ -55,19 +55,66 @@ A dual-phase intelligent resume screening system combining NLP, topic modeling, 
 
 ## 🗂 Repository Structure
 
+```text
 lda-resume-screening-dashboard/
-│
-├── 📁 phase-1-conference-version/ ← Clean academic version
-│ └── (LDA, resume parsing, visualizations)
-│
-├── 📁 phase-2-extended-ai-version/ ← With OpenAI integration
-│ ├── working/ ← Fully working version
-│ └── buggy/ ← Prototype with issues
-│
-├── main_README.md
-├── requirements.txt
-└── github-default-readme.md
+├── phase-1-conference-version/     # ICCCAI 2024 version: LDA topics + similarity ranking
+│   ├── app/app.py                  # Streamlit dashboard
+│   ├── core/                       # Cleaning, TF-IDF, similarity, dataset builder
+│   ├── data/                       # Processed resumes (anonymised Kaggle sample) + job descriptions
+│   └── notebooks/                  # Exploration notebook
+├── phase-2-extended-ai-version/    # Adds accounts, resume upload and OpenAI interview questions
+│   ├── app/                        # app.py (UI), auth.py (hashed accounts), text_utils.py
+│   ├── data/JobDesc/               # Job descriptions offered in the app
+│   └── .env.example                # OPENAI_API_KEY, OPENAI_MODEL
+├── tests/                          # pytest suite for both phases (unit + Streamlit smoke tests)
+├── requirements.txt                # Both phases
+└── requirements-dev.txt            # + pytest, ruff
+```
 
+---
+
+## 🚀 Quick start
+
+Requires Python 3.10+.
+
+```bash
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+python -m nltk.downloader punkt punkt_tab stopwords wordnet
+
+# Phase 1 dashboard
+streamlit run phase-1-conference-version/app/app.py
+
+# Phase 2 (needs an OpenAI key)
+cp phase-2-extended-ai-version/.env.example phase-2-extended-ai-version/.env   # then add your key
+streamlit run phase-2-extended-ai-version/app/app.py
+```
+
+**Use your own resumes in phase 1:** put .pdf/.docx/.txt files in a folder and rebuild the dataset:
+
+```bash
+cd phase-1-conference-version
+python core/fileReader.py folder --input /path/to/resumes --output data/Resume_Data.csv
+```
+
+The bundled `Resume_Data.csv` is an anonymised sample (2 resumes per category) of the public
+[Kaggle resume dataset](https://www.kaggle.com/datasets/gauravduttakiit/resume-dataset), rebuilt with
+`python core/fileReader.py kaggle --input data/resume_dataset.csv --output data/Resume_Data.csv`.
+
+## 🧪 Tests
+
+```bash
+pip install -r requirements-dev.txt
+ruff check .
+pytest            # about 30 seconds; includes headless runs of both apps
+```
+
+## 🔒 Privacy
+
+Real people's resumes and user accounts are never committed: `.gitignore` excludes `data/Resumes/`
+and `ai_components/users.json`. Phase 2 stores passwords as salted PBKDF2 hashes, but it is a local
+demo, not production authentication.
 
 ---
 
